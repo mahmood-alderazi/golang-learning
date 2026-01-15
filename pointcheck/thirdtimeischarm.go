@@ -7,11 +7,6 @@ func ThirdTimeIsACharm(str string) string {
         return "\n"
     }  
 
-    // if string has less than 3 chars → no 3rd char → newline
-    if len(str) < 3 {
-        return "\n"
-    }
-
     result := ""
     // start at index 2 (the 3rd char), then jump by 3 each time
     // collect every 3rd character
