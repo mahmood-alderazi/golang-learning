@@ -8,7 +8,7 @@ func Chunk(slice []int, size int) {
         return
     }
     
-    result := [][]int{}  //(a slice of slices). [[1,2,3],[4,5,6],[7,8]]
+    var result [][]int  //(a slice of slices). [[1,2,3],[4,5,6],[7,8]]
     
     for i := 0; i < len(slice); i += size {
         end := i + size
