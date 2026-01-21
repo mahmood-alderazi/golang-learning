@@ -17,8 +17,7 @@ func Chunk(slice []int, size int) {
             end = len(slice)
         }
         
-        chunk := slice[i:end]
-        result = append(result, chunk)
+        result = append(result, slice[i:end])
     }
     
     fmt.Println(result)
