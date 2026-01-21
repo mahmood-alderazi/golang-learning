@@ -13,9 +13,11 @@ func main() {
         return
     }
     
+    input:= args[0]
+    
     // Convert to number
     num := 0
-    for _, char := range args[0] {
+    for _, char := range input {
         if !(char >= '0' || char <= '9') {
             z01.PrintRune('0')
             z01.PrintRune('\n')
