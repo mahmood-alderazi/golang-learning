@@ -4,25 +4,25 @@ func FifthAndSkip(str string) string {
 	if str == "" {
 		return "\n"
 	}
-
+	
 	// Remove spaces
-	clearStr := ""
+	nospace := ""
 	for _, char := range str {
 		if char != ' ' {
-			clearStr += string(char)
+			nospace += string(char)
 		}
 	}
-
+	
 	// Check length
-	if len(clearStr) < 5 {
+	if len(nospace) < 5 {
 		return "Invalid Input\n"
 	}
-
+	
 	// Take 5, skip 1, repeat
 	result := ""
 	count := 0
-
-	for _, char := range clearStr {
+	
+	for _, char := range nospace {
 		if count == 5 {
 			result += " "
 			count = 0
@@ -31,6 +31,6 @@ func FifthAndSkip(str string) string {
 			count++
 		}
 	}
-
+	
 	return result + "\n"
 }
