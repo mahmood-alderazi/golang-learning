@@ -1,21 +1,21 @@
 package piscine
 
 func Slice(a []string, nbrs ...int) []string {
-    l := len(a)
+    size := len(a)
     
     start := 0
     if len(nbrs) > 0 {
         start = nbrs[0]
         if start < 0 {
-            start += l
+            start += size
         }
     }
     
-    end := l
+    end := size
     if len(nbrs) > 1 {
         end = nbrs[1]
         if end < 0 {
-            end += l
+            end += size
         }
     }
     
@@ -26,11 +26,11 @@ func Slice(a []string, nbrs ...int) []string {
     if end < 0 {
         end = 0
     }
-    if start > l {
-        start = l
+    if start > size {
+        start = size
     }
-    if end > l {
-        end = l
+    if end > size {
+        end = size
     }
     if start > end {
         return nil
