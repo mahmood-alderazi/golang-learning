@@ -17,13 +17,6 @@ func main() {
 	
 	input := args[0]
 
-	
-	if input == "" {          
-		z01.PrintRune('\n')    
-        return
-	}
-
-
 	slice := []string{}   
 	word := ""           
 
