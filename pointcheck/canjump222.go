@@ -1,4 +1,4 @@
-package solution
+package piscine
 
 func CanJump(steps []uint) bool {
 	if len(steps) == 0 {
