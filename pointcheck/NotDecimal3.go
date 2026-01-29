@@ -3,7 +3,6 @@ import (
     "math"
     "strconv"
 )
-
 func NotDecimal(dec string) string {
     if dec == "" {
         return "\n"
@@ -12,8 +11,8 @@ func NotDecimal(dec string) string {
     dotfound := false
     count := 0
     
-    for i := 0; i < len(dec); i++ {
-        if dec[i] == '.' {
+    for _, char := range dec {
+        if char == '.' {
             dotfound = true
         } else if dotfound == true {
             count++
