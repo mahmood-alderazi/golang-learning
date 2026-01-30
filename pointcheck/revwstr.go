@@ -16,11 +16,13 @@ func main() {
 	word := ""
 	
 	for _, char := range input {
-		if char != ' ' {
+		if char == ' ' {
+			if word != "" {
+				temp = append(temp, word)
+				word = ""
+			}
+		} else {
 			word += string(char)
-		} else if word != "" {
-			temp = append(temp, word)
-			word = ""
 		}
 	}
 	
@@ -28,16 +30,13 @@ func main() {
 		temp = append(temp, word)
 	}
 	
-	result := ""
 	for i := len(temp) - 1; i >= 0; i-- {
-		result += string(temp[i])
-		if i != 0 {
-			result += string(" ")
+		for _, char := range temp[i] {
+			z01.PrintRune(char)
 		}
-	}
-	
-	for _, char := range result {
-		z01.PrintRune(char)
+		if i > 0 {
+			z01.PrintRune(' ')
+		}
 	}
 	z01.PrintRune('\n')
 }
