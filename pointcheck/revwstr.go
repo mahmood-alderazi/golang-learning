@@ -12,25 +12,25 @@ func main() {
 	}
 	
 	input := args[0]
-	words := []string{}
+	temp := []string{}
 	word := ""
 	
 	for _, char := range input {
 		if char != ' ' {
 			word += string(char)
 		} else if word != "" {
-			words = append(words, word)
+			temp = append(temp, word)
 			word = ""
 		}
 	}
 	
 	if word != "" {
-		words = append(words, word)
+		temp = append(temp, word)
 	}
 	
 	result := ""
-	for i := len(words) - 1; i >= 0; i-- {
-		result += string(words[i])
+	for i := len(temp) - 1; i >= 0; i-- {
+		result += string(temp[i])
 		if i != 0 {
 			result += string(" ")
 		}
