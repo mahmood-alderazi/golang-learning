@@ -7,25 +7,19 @@ import (
 
 func main() {
 	args := os.Args[1:]
-	
 	if len(args) != 1 {
 		z01.PrintRune('\n')
 		return
 	}
 	
-	if args[0] == "" {
-		z01.PrintRune('\n')
-		return
-	}
-	
-	str := args[0]
-	words := []string{}
+	input := args[0]
+	temp := []string{}
 	word := ""
 	
-	for _, char := range str {
+	for _, char := range input {
 		if char == ' ' {
 			if word != "" {
-				words = append(words, word)
+				temp = append(temp, word)
 				word = ""
 			}
 		} else {
@@ -34,13 +28,18 @@ func main() {
 	}
 	
 	if word != "" {
-		words = append(words, word)
+		temp = append(temp, word)
 	}
 	
-	first := words[0]
+	if len(temp) == 0 {
+		z01.PrintRune('\n')
+		return
+	}
 	
-	for i := 1; i < len(words); i++ {
-		for _, char := range words[i] {
+	first := temp[0]  // ← FIXED!
+	
+	for i := 1; i < len(temp); i++ {  // ← FIXED!
+		for _, char := range temp[i] {
 			z01.PrintRune(char)
 		}
 		z01.PrintRune(' ')
